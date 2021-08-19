@@ -15,8 +15,8 @@ module.exports = function (app) {
   app.post('/auth/signup', Auth.signup);
   app.post('/auth/refresh', Auth.refresh);
   
-  app.post('/company/create', ensureAuthenticated, Company.create);
-  app.get('/company/page/:page', ensureAuthenticated, Company.list);
+  app.post('/company/create', Company.create);
+  app.get('/company/page/:page', Company.list);
 
   app.post('/project/create', ensureAuthenticated, Project.create);
   app.put('/project/update', ensureAuthenticated, Project.update);
