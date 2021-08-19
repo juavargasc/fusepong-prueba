@@ -26,7 +26,7 @@ Debes contar con lo siguiente:
 ## Ejecutando las pruebas ⚙️
 
 * **Primero**, debes crear un usuario haciendo uso de la petición postman signup.
-* **Segundo**, con el usuario y contraseña creada en el punto anterio hacer login en la aplicacion con la petición login, esto generará un token y un refreshToken, el primero tiene una vigencia de 15 minutos, esto para el efecto de las pruebas, con el refreshtoken puede obtener un token nuevo sin pasar por el login nuevamente, este ultimo tiene una vigencia de 7 dias o hasta que se use.
+* **Segundo**, con el usuario y contraseña creada en el punto anterio hacer login en la aplicacion con la petición login, esto generará un token y un refreshToken, el primero tiene una vigencia de 23 horas 15 minutos, esto para el efecto de las pruebas, con el refreshtoken puede obtener un token nuevo sin pasar por el login nuevamente, este ultimo tiene una vigencia de 7 dias o hasta que se use.
 * **Tercero**, puede consultar el/los usuarios creados haciendo uso de la petición postman users o la de un usuario en particular con la peticion postman user, para ambos casos debe agregar en Authorization la opcion Bearer token y pegar el token que fue devuelto al momento del login.
 * **Cuarto**, si el token vence en el proceso, puede hacer uso de la petición postman refrestoken, en esta opcion debe enviar el refreshtoken que fue dispuesto en la respuesta del login.
 
