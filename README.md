@@ -20,7 +20,8 @@ Debes contar con lo siguiente:
 * Clonar en su local la rama main del proyecto una vez tenga preparado el ambiente.
 * En la raiz del proyecto ejecutar npm i.
 * Para correr el proyecto puede ejecutar npm run start.
-* En la raiz del proyecto encontrar fusepongV2 y fusepongV21 que corresponden a las peticiones de postman que puede importar según la version que convenga.
+* En la raiz del proyecto encontrar fusepongV2 y fusepongV21 que corresponden a las peticiones de postman que puede importar según la version postman que convenga.
+* En laraiz del proyecto encontrará un dump demongo en caso de querer desplegar informacion demo.
 
 
 ## Ejecutando las pruebas ⚙️

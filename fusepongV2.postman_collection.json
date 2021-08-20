@@ -1,0 +1,729 @@
+{
+	"info": {
+		"_postman_id": "e1f962b7-76b6-4cf2-b99c-f3c9143f2490",
+		"name": "fusepong",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "company",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "compañia 4",
+									"type": "text"
+								},
+								{
+									"key": "nit",
+									"value": "123459",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "7457222",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Calle falsa 123",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "compania4@falsa.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": "https://fusepongbk.herokuapp.com/company/create"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/company/page/:page",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"company",
+								"page",
+								":page"
+							],
+							"variable": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTFlNmJjMGE5NzhiMjAwMTYxZGNlNzEiLCJleHAiOjE2MjkzODQ5NjZ9.66-QERsvUzDRE9KR65gcoRKl4q7kfOu3sh5a8upqLsY"
+				}
+			}
+		},
+		{
+			"name": "project",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authorization}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "proyecto 1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "proyecto",
+									"type": "text"
+								},
+								{
+									"key": "company",
+									"value": "611eb3b474480e001680bfc7",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Calle falsa 123",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "comania1@falsa.com",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{host}}/project/create"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTFlOGRjOGM4ZDRhYzM3MzBiNThjY2MiLCJleHAiOjE2MjkzOTYyMTB9.Q3A7EoE6_9O5evOkY8SBS1eON2hfMvcAAOvXJGTE6pc"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "proyecto 1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "proyecto 1",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "611e95dae63d243d5ec270b0",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Calle falsa 123",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "comania1@falsa.com",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://localhost:4000/project/update"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authorization}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/project/page/:page",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"project",
+								"page",
+								":page"
+							],
+							"variable": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listCompany",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{authorization}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/project/item/:company",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"project",
+								"item",
+								":company"
+							],
+							"variable": [
+								{
+									"key": "company",
+									"value": "611e88f8b7638d345f91aca4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTFlNmJjMGE5NzhiMjAwMTYxZGNlNzEiLCJleHAiOjE2MjkzODQ5NjZ9.66-QERsvUzDRE9KR65gcoRKl4q7kfOu3sh5a8upqLsY"
+				}
+			}
+		},
+		{
+			"name": "userStorie",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTFlOGRjOGM4ZDRhYzM3MzBiNThjY2MiLCJleHAiOjE2MjkzOTgzMDR9.cXWdq-majUNv7hgsKUbUvy0Lb8i53LWkdc6TlnlUJ20"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Historia 2",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "historia",
+									"type": "text"
+								},
+								{
+									"key": "project",
+									"value": "611e95dae63d243d5ec270b0",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Calle falsa 123",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "comania1@falsa.com",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://localhost:4000/user-storie/create"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTFlOGRjOGM4ZDRhYzM3MzBiNThjY2MiLCJleHAiOjE2MjkzOTgzMDR9.cXWdq-majUNv7hgsKUbUvy0Lb8i53LWkdc6TlnlUJ20"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Hisotria 2",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Historia 2",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "611ea262d3bc30436d63a0b9",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Calle falsa 123",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "comania1@falsa.com",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://localhost:4000/user-storie/update"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTFlOGRjOGM4ZDRhYzM3MzBiNThjY2MiLCJleHAiOjE2MjkzOTk3ODN9.9MIPMmYGjd8Y9A2dsEGuFiU26jIkNNqvxykda0o4uoQ"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/user-storie/page/:page",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user-storie",
+								"page",
+								":page"
+							],
+							"variable": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTFlNmJjMGE5NzhiMjAwMTYxZGNlNzEiLCJleHAiOjE2MjkzODQ5NjZ9.66-QERsvUzDRE9KR65gcoRKl4q7kfOu3sh5a8upqLsY"
+				}
+			}
+		},
+		{
+			"name": "ticket",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTFlOGRjOGM4ZDRhYzM3MzBiNThjY2MiLCJleHAiOjE2MjkzOTk3ODN9.9MIPMmYGjd8Y9A2dsEGuFiU26jIkNNqvxykda0o4uoQ"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Tarea 1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "tarea",
+									"type": "text"
+								},
+								{
+									"key": "userStorie",
+									"value": "611ea1e1c83c1b430d298f34",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "Activo",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "comania1@falsa.com",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://localhost:4000/ticket/create"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTFlOGRjOGM4ZDRhYzM3MzBiNThjY2MiLCJleHAiOjE2MjkzOTk3ODN9.9MIPMmYGjd8Y9A2dsEGuFiU26jIkNNqvxykda0o4uoQ"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Tarea 1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Tarea 1",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "611ea82baedd6346473b918a",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "en proceso",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "comania1@falsa.com",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://localhost:4000/ticket/update"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTFlOGRjOGM4ZDRhYzM3MzBiNThjY2MiLCJleHAiOjE2Mjk0ODM4NDd9.c9Zw2qdLUbsRxwlPUdfvEI6hv_PdLzLpy48Zy6YyYtA"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/ticket/page/:page",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"ticket",
+								"page",
+								":page"
+							],
+							"variable": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTFlNmJjMGE5NzhiMjAwMTYxZGNlNzEiLCJleHAiOjE2MjkzODQ5NjZ9.66-QERsvUzDRE9KR65gcoRKl4q7kfOu3sh5a8upqLsY"
+				}
+			}
+		},
+		{
+			"name": "comment",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTFlOGRjOGM4ZDRhYzM3MzBiNThjY2MiLCJleHAiOjE2Mjk0ODM4NDd9.c9Zw2qdLUbsRxwlPUdfvEI6hv_PdLzLpy48Zy6YyYtA"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Tarea 1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "comentario 1",
+									"type": "text"
+								},
+								{
+									"key": "user",
+									"value": "611e8dc8c8d4ac3730b58ccc",
+									"type": "text"
+								},
+								{
+									"key": "ticket",
+									"value": "611ea82baedd6346473b918a",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "comania1@falsa.com",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://localhost:4000/comment/create"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTFlOGRjOGM4ZDRhYzM3MzBiNThjY2MiLCJleHAiOjE2Mjk0ODM4NDd9.c9Zw2qdLUbsRxwlPUdfvEI6hv_PdLzLpy48Zy6YyYtA"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/comment/page/:page",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"comment",
+								"page",
+								":page"
+							],
+							"variable": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTFlNmJjMGE5NzhiMjAwMTYxZGNlNzEiLCJleHAiOjE2MjkzODQ5NjZ9.66-QERsvUzDRE9KR65gcoRKl4q7kfOu3sh5a8upqLsY"
+				}
+			}
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "first",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "last",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "user",
+									"value": "admin1@admin.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "company",
+									"value": "611eb3b474480e001680bfc7",
+									"type": "text"
+								}
+							]
+						},
+						"url": "https://fusepongbk.herokuapp.com/auth/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "demo2@demo.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{host}}/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTFlOGRjOGM4ZDRhYzM3MzBiNThjY2MiLCJleHAiOjE2Mjk0ODM4NDd9.c9Zw2qdLUbsRxwlPUdfvEI6hv_PdLzLpy48Zy6YyYtA"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/user/page/:page",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"page",
+								":page"
+							],
+							"variable": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTFlNmJjMGE5NzhiMjAwMTYxZGNlNzEiLCJleHAiOjE2MjkzODQ5NjZ9.66-QERsvUzDRE9KR65gcoRKl4q7kfOu3sh5a8upqLsY"
+		}
+	}
+}
