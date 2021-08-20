@@ -29,6 +29,18 @@ exports.update = async function(req, res, next){
   }
 };
 
+exports.listStorie = function(req, res){
+  let query = {userStorie : req.params.storie};
+  const page = req.params.page || 1;
+  const options = {
+    page: page,
+    limit: 100
+  };
+  Ticket.paginate(query, options).then(function(result) {
+    res.json(result);
+  });
+};
+
 exports.list = function(req, res){
   let query = {};
   const page = req.params.page || 1;

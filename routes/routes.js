@@ -26,10 +26,12 @@ module.exports = function (app) {
   app.post('/user-storie/create', ensureAuthenticated, UserStorie.create);
   app.put('/user-storie/update', ensureAuthenticated, UserStorie.update);
   app.get('/user-storie/page/:page', ensureAuthenticated, UserStorie.list);
+  app.get('/user-storie/item/:project', ensureAuthenticated, UserStorie.listProject);
 
   app.post('/ticket/create', ensureAuthenticated, Ticket.create);
   app.put('/ticket/update', ensureAuthenticated, Ticket.update);
   app.get('/ticket/page/:page', ensureAuthenticated, Ticket.list);
+  app.get('/ticket/item/:storie', ensureAuthenticated, Ticket.listStorie);
 
   app.post('/comment/create', ensureAuthenticated, Comment.create);
   app.get('/comment/page/:page', ensureAuthenticated, Comment.list);
