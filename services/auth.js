@@ -37,7 +37,10 @@ async function signup({first, last, user, password, company}) {
 
 async function login({ username, password }) {
 	const userdb = await db.User.findOne({ user:username });
-	const test = await bcrypt.compare(password, userdb.password);
+	if (!userdb) {
+      throw 'Usuario o contraseña incorrectos'
+  }
+  const test = await bcrypt.compare(password, userdb.password);
 	if (!userdb || !test) {
 	    throw 'Usuario o contraseña incorrectos'
 	}
@@ -46,7 +49,7 @@ async function login({ username, password }) {
 
 	await refreshToken.save();
 
-	return {message:'Logueo exitoso', user:userdb.user, token:jwtToken, refreshtoken:refreshToken}
+	return {message:'Logueo exitoso', user:userdb._id, token:jwtToken, refreshtoken:refreshToken}
 }
 
 async function refresh({ refreshtoken }) {

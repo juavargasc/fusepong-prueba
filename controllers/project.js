@@ -29,6 +29,18 @@ exports.update = async function(req, res, next){
   }
 };
 
+exports.listCompany = function(req, res){
+  let query = {company : req.params.company};
+  const page = req.params.page || 1;
+  const options = {
+    page: page,
+    limit: 100
+  };
+  Project.paginate(query, options).then(function(result) {
+    res.json(result);
+  });
+};
+
 exports.list = function(req, res){
   let query = {};
   const page = req.params.page || 1;

@@ -21,6 +21,7 @@ module.exports = function (app) {
   app.post('/project/create', ensureAuthenticated, Project.create);
   app.put('/project/update', ensureAuthenticated, Project.update);
   app.get('/project/page/:page', ensureAuthenticated, Project.list);
+  app.get('/project/item/:company', ensureAuthenticated, Project.listCompany);
 
   app.post('/user-storie/create', ensureAuthenticated, UserStorie.create);
   app.put('/user-storie/update', ensureAuthenticated, UserStorie.update);
