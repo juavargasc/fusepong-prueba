@@ -15,6 +15,19 @@ exports.create = async function(req, res, next){
   }
 };
 
+exports.listTicket = function(req, res){
+  let query = {ticket : req.params.ticket};
+  const page = req.params.page || 1;
+  const options = {
+    page: page,
+    limit: 100,
+    populate:'user'
+  };
+  Comment.paginate(query, options).then(function(result) {
+    res.json(result);
+  });
+};
+
 exports.list = function(req, res){
   let query = {};
   const page = req.params.page || 1;

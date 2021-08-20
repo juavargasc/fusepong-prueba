@@ -35,6 +35,7 @@ module.exports = function (app) {
 
   app.post('/comment/create', ensureAuthenticated, Comment.create);
   app.get('/comment/page/:page', ensureAuthenticated, Comment.list);
+  app.get('/comment/item/:ticket', ensureAuthenticated, Comment.listTicket);
 
   app.get('/user', ensureAuthenticated, User.list);
   app.get('/user/page/:page', ensureAuthenticated, User.list);
